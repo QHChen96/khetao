@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>serve</artifactId>
+        <groupId>com.khetao</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>khetao-shop</artifactId>
+
+    <packaging>pom</packaging>
+
+    <name>khetao-shop</name>
+    <url>http://www.khetao.com</url>
+    <modules>
+        <module>khetao-serve-shop</module>
+        <module>khetao-serve-shop-service</module>
+        <module>khetao-serve-shop-client</module>
+    </modules>
+</project>

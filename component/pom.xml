@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>khetao</artifactId>
+        <groupId>com.khetao</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>component</artifactId>
+
+    <name>component</name>
+    <url>http://www.example.com</url>
+    <packaging>pom</packaging>
+    <modules>
+        <module>khetao-cache</module>
+        <module>khetao-session</module>
+        <module>khetao-socket</module>
+        <module>khetao-search</module>
+        <module>khetao-mq</module>
+        <module>khetao-config</module>
+        <module>khetao-storage</module>
+    </modules>
+
+
+    <properties>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.khetao</groupId>
+                <artifactId>khetao-cache</artifactId>
+                <version>${khetao.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+    </build>
+</project>

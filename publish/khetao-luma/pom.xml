@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>publish</artifactId>
+        <groupId>com.khetao</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>luma</artifactId>
+    <groupId>com.khetao</groupId>
+    <version>${khetao.version}</version>
+    <name>luma</name>
+    <url>http://www.example.com</url>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-cache</artifactId>
+            <version>${khetao.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-session</artifactId>
+            <version>${khetao.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
