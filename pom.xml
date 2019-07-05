@@ -66,6 +66,12 @@
 
             <dependency>
                 <groupId>com.khetao</groupId>
+                <artifactId>khetao-storage-base</artifactId>
+                <version>${khetao.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.khetao</groupId>
                 <artifactId>khetao-config</artifactId>
                 <version>${khetao.version}</version>
                 <scope>compile</scope>

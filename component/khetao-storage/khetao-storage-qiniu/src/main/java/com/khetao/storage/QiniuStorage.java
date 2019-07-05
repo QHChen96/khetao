@@ -1,22 +1,26 @@
 package com.khetao.storage;
 
 import com.google.gson.Gson;
+import com.khetao.storage.config.QiniuConfig;
+import com.khetao.storage.enums.UploadType;
+import com.khetao.storage.model.StorageResult;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.http.Response;
 import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
-import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.UnsupportedEncodingException;
+import java.io.File;
 import java.net.URLEncoder;
 
 
 /**
  * <p>
- *
+ *  七牛
  * </p>
  *
  * @author chenqinhao
@@ -24,60 +28,126 @@ import java.net.URLEncoder;
  * @email qhchen96@gmail.com
  * @since 2019-07-05
  */
-public class QiniuStorage {
+public class QiniuStorage implements KhetaoStorage {
 
-    public static final String ACCESS_KEY = "jWQW97_kx0lXqcljFzFXyhyxeNFvZ-4mxSod78QD";
-    public static final String SECRET_KEY = "FR79-kppiK04W-rZOi2pX-v1agjJXFHoIx2C2FHV";
-    public static final String BUCKET = "luma";
+    private final Logger logger = LoggerFactory.getLogger(QiniuStorage.class);
 
+    private QiniuConfig config;
 
-    public static String upload() {
-        String filePath = "/Users/chenqinhao/Pictures/WechatIMG2118.jpeg";
+    public static final String RETURN_BODY = "{\"fileName\":\"$(key)\",\"hash\":\"$(etag)\",\"namespace\":\"$(bucket)\",\"fsize\":$(fsize)}";
+
+    public QiniuStorage(QiniuConfig config) {
+        this.config = config;
+    }
+
+    private StorageResult upload0(UploadType type, Object object, String fileName, String namespace) {
+        logger.info("开始上传文件: 名称【{}】, 空间 【{}】", fileName, namespace);
         Configuration cfg = new Configuration(Zone.zone0());
         UploadManager uploadManager = new UploadManager(cfg);
         //默认不指定key的情况下，以文件内容的hash值作为文件名
-        String key = null;
-        Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
+        Auth auth = Auth.create(config.getAccessKey(), config.getSecretKey());
         StringMap putPolicy = new StringMap();
-        putPolicy.put("returnBody", "{\"key\":\"$(key)\",\"hash\":\"$(etag)\",\"bucket\":\"$(bucket)\",\"fsize\":$(fsize)}");
-        long expireSeconds = 3600;
-        String upToken = auth.uploadToken(BUCKET, null, expireSeconds, putPolicy);
+        putPolicy.put("returnBody", RETURN_BODY);
+        String upToken = auth.uploadToken(namespace, fileName, config.getTokenExpireSeconds(), putPolicy);
         try {
-            Response response = uploadManager.put(filePath, key, upToken);
-            System.out.println(response.bodyString());
+            Response response = null;
+            switch (type) {
+                case FILE_PATH:
+                    response = uploadManager.put((String) object, fileName, upToken); break;
+                case INPUT_STREAM:
+                    // TODO
+                    break;
+                case FILE:
+                    response = uploadManager.put((File) object, fileName, upToken); break;
+                case BYTE_ARR:
+                    response = uploadManager.put((byte[]) object, fileName, upToken); break;
+                default:
+                     break;
+            }
             //解析上传成功的结果
-            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-            System.out.println(putRet.key);
-            System.out.println(putRet.hash);
-            return putRet.key;
+            StorageResult result = new Gson().fromJson(response.bodyString(), StorageResult.class);
+            return result;
         } catch (QiniuException ex) {
             Response r = ex.response;
-            System.err.println(r.toString());
-            try {
-                System.err.println(r.bodyString());
-            } catch (QiniuException ex2) {
-                //ignore
-            }
+            logger.error("上传文件出错: {}", r.toString());
         }
         return null;
     }
 
-    public static void download(String fileName) throws UnsupportedEncodingException {
-        String domainOfBucket = "http://pu4lxyuac.bkt.clouddn.com";
-        String encodedFileName = URLEncoder.encode(fileName, "utf-8").replace("+", "%20");
-        String publicUrl = String.format("%s/%s", domainOfBucket, encodedFileName);
-        Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
-        long expireInSeconds = 3600;//1小时，可以自定义链接过期时间
-        String finalUrl = auth.privateDownloadUrl(publicUrl, expireInSeconds);
-        System.out.println(finalUrl);
+    /**
+     * 上传文件
+     * @param filePath 文件路径
+     * @param fileName
+     * @param namespace
+     * @return
+     */
+    @Override
+    public StorageResult upload(String filePath, String fileName, String namespace) {
+        return upload0(UploadType.FILE_PATH, filePath, fileName, namespace);
     }
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        String key = upload();
-        download(key);
-
+    /**
+     * 上传文件
+     * @param data 数组
+     * @param fileName
+     * @param namespace
+     * @return
+     */
+    @Override
+    public StorageResult upload(byte[] data, String fileName, String namespace) {
+        return upload0(UploadType.FILE_PATH, data, fileName, namespace);
     }
 
+    /**
+     * 上传文件
+     * @param file 文件
+     * @param fileName
+     * @param namespace
+     * @return
+     */
+    @Override
+    public StorageResult upload(File file, String fileName, String namespace) {
+        return upload0(UploadType.FILE, file, fileName, namespace);
+    }
+
+
+    /**
+     * 私有空间的路径
+     * @param fileName
+     * @return
+     */
+    @Override
+    public String privateDownloadUrl(String fileName) {
+        try {
+            String encodedFileName = URLEncoder.encode(fileName, "utf-8").replace("+", "%20");
+            String publicUrl = String.format("%s/%s", config.getDomain(), encodedFileName);
+            Auth auth = Auth.create(config.getAccessKey(), config.getSecretKey());
+            String finalUrl = auth.privateDownloadUrl(publicUrl, config.getTokenExpireSeconds());
+            return finalUrl;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            logger.error("获取文件出错: {}", ex.getMessage());
+        }
+       return null;
+    }
+
+
+    /**
+     * 公共空间的路径
+     * @param fileName
+     * @return
+     */
+    @Override
+    public String downloadUrl(String fileName) {
+        try {
+            String finalUrl = String.format("%s/%s", config.getDomain(), fileName);
+            return finalUrl;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            logger.error("获取文件出错: {}", ex.getMessage());
+        }
+        return null;
+    }
 
 
 }

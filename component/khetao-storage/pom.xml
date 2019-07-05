@@ -16,6 +16,7 @@
     <url>http://www.khetao.com</url>
     <modules>
         <module>khetao-storage-qiniu</module>
+        <module>khetao-storage-base</module>
     </modules>
 
     <properties>
