@@ -1,10 +1,10 @@
 package com.khetao.serve.shop.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
 import com.khetao.base.BaseController;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -17,7 +17,10 @@ import com.khetao.base.BaseController;
  * @version 1.0
  */
 @RestController
-@RequestMapping("/shop/shopRole")
+@RequestMapping("/shopRole")
+@AllArgsConstructor
 public class ShopRoleController extends BaseController {
+
+
 
 }

@@ -1,9 +1,11 @@
 package com.khetao.serve.product.service.impl;
 
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
+import com.khetao.component.cache.redis.RedisManager;
 import com.khetao.serve.product.entity.Brand;
 import com.khetao.serve.product.mapper.BrandMapper;
 import com.khetao.serve.product.service.BrandService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,5 +20,22 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BrandServiceImpl extends BaseServiceImpl<BrandMapper, Brand> implements BrandService {
+
+    @Autowired
+    private RedisManager<Brand> redisManager;
+
+
+    public Brand getByCache(Long id) {
+        String key = "khetao:brand:" + id;
+        Brand brand = redisManager.get(key, Brand.class);
+        if (null == brand) {
+            brand = baseMapper.selectById(id);
+            if (null == brand) {
+                brand = new Brand();
+            }
+            redisManager.put(key, brand);
+        }
+        return brand;
+    }
 
 }

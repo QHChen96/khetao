@@ -17,15 +17,88 @@
     <url>http://www.khetao.com</url>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-auth</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.khetao</groupId>
             <artifactId>khetao-serve-shop-service</artifactId>
         </dependency>
 
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-autoconfigure</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
     </dependencies>
 
+    <build>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.yaml</include>
+                    <include>**/*.yml</include>
+                </includes>
+                <excludes>
+                    <exclude>test/*</exclude>
+                    <exclude>dev/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+    </build>
 </project>

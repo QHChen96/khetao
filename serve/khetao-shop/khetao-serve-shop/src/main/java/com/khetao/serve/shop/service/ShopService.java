@@ -1,7 +1,9 @@
 package com.khetao.serve.shop.service;
 
+import com.khetao.serve.shop.dto.register.ShopUserRegisterWithEmailDTO;
 import com.khetao.serve.shop.entity.Shop;
-import com.khetao.base.BaseService;
+import com.khetao.base.service.BaseService;
+import com.khetao.serve.shop.vo.ShopVO;
 
 /**
  * <p>
@@ -14,5 +16,7 @@ import com.khetao.base.BaseService;
  * @version 1.0
  */
 public interface ShopService extends BaseService<Shop> {
+
+    ShopVO createShop(ShopUserRegisterWithEmailDTO createShopWithEmail);
 
 }

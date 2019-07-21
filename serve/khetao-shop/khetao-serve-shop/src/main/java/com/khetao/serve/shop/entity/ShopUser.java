@@ -1,13 +1,14 @@
 package com.khetao.serve.shop.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.khetao.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.khetao.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -31,19 +32,60 @@ public class ShopUser extends BaseEntity {
     private Long id;
 
     /**
-     * 店铺id
+     * 用户名
      */
-    private Long shopId;
+    private String username;
 
     /**
-     * 创建时间
+     * 昵称
      */
-    private LocalDateTime gmtCreate;
+    private String nickName;
 
     /**
-     * 更新时间
+     * 真实姓名
      */
-    private LocalDateTime gmtModify;
+    private String realName;
 
+    /**
+     * 手机号
+     */
+    private String mobile;
+
+    /**
+     * 手机区号
+     */
+    private String mobileCode;
+
+    /**
+     * 状态
+     * @see com.khetao.enums.UsableStatusEnum
+     */
+    private Integer status;
+
+    /**
+     * 邮箱
+     */
+    private String email;
+
+    /**
+     * 生日
+     */
+    private LocalDateTime birthday;
+
+    /**
+     * 是否删除
+     * @see com.khetao.enums.DelStatusEnum
+     */
+    private Integer isDel;
+
+    /**
+     * 签名
+     */
+    private String signature;
+
+    /**
+     * 店铺数量
+     */
+    private Integer shopCount;
 
 }

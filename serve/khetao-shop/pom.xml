@@ -20,4 +20,5 @@
         <module>khetao-serve-shop-service</module>
         <module>khetao-serve-shop-client</module>
     </modules>
+
 </project>

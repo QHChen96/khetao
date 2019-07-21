@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -22,22 +21,24 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class RedisTest {
 
-    @Autowired
-    private RedisTemplate redisTemplate;
+
 
     @Autowired
-    private RedisManager<Object> redisManager;
+    private RedisManager<String> stringRedisManager;
+
+    @Autowired
+    private RedisManager<Integer> intRedisManager;
 
     @Test
     public void testSetGet() {
-        //redisTemplate.boundValueOps("name").set("chenqinhao", 1, TimeUnit.MINUTES);
-        System.out.println(redisTemplate.boundValueOps("name").get());
+        stringRedisManager.put("str1", "str1");
+        intRedisManager.put("int1", 1);
+        System.out.println(stringRedisManager.get("str1", String.class));
+        System.out.println(intRedisManager.get("int1", Integer.class));
     }
 
     @Test
     public void testRedisManager() {
-        //redisManager.put("testSer", 1, 100);
-        System.out.println(String.valueOf(redisManager.get("testSer", Integer.class)));
-        System.out.println(redisManager.incr("testSer"));
+
     }
 }

@@ -3,7 +3,7 @@ package com.khetao.serve.shop.service.impl;
 import com.khetao.serve.shop.entity.ShopFactory;
 import com.khetao.serve.shop.mapper.ShopFactoryMapper;
 import com.khetao.serve.shop.service.ShopFactoryService;
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

@@ -5,15 +5,15 @@ package com.khetao.base;
  * @since 2019-05-04
  * @version 1.0
  **/
-public class BaseResult {
+public class BaseResult<T> {
 
     private int code;
 
     private String message;
 
-    private Object data;
+    private T data;
 
-    public BaseResult(int code, String message, Object data) {
+    public BaseResult(int code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -24,7 +24,7 @@ public class BaseResult {
         this.message = baseCode.getMsg();
     }
 
-    public BaseResult(BaseCode baseCode, Object data) {
+    public BaseResult(BaseCode baseCode, T data) {
         this.code = baseCode.getCode();
         this.message = baseCode.getMsg();
         this.data = data;
@@ -52,7 +52,7 @@ public class BaseResult {
         return data;
     }
 
-    public BaseResult setData(Object data) {
+    public BaseResult setData(T data) {
         this.data = data;
         return this;
     }

@@ -1,6 +1,6 @@
 package com.khetao.serve.product.service;
 
-import com.khetao.base.BaseService;
+import com.khetao.base.service.BaseService;
 import com.khetao.serve.product.entity.ProductSkuPropVal;
 
 /**

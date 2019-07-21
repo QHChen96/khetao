@@ -19,6 +19,11 @@
 
         <dependency>
             <groupId>com.khetao</groupId>
+            <artifactId>khetao-cache</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.khetao</groupId>
             <artifactId>khetao-serve-product</artifactId>
         </dependency>
 

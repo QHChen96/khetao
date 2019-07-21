@@ -1,6 +1,6 @@
 package com.khetao.serve.product.service;
 
-import com.khetao.base.BaseService;
+import com.khetao.base.service.BaseService;
 import com.khetao.serve.product.entity.Brand;
 
 /**
@@ -14,5 +14,7 @@ import com.khetao.serve.product.entity.Brand;
  * @version 1.0
  */
 public interface BrandService extends BaseService<Brand> {
+
+    Brand getByCache(Long id);
 
 }

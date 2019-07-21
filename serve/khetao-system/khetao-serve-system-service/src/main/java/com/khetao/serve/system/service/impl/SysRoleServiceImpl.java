@@ -1,6 +1,6 @@
 package com.khetao.serve.system.service.impl;
 
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
 import com.khetao.serve.system.entity.SysRole;
 import com.khetao.serve.system.mapper.SysRoleMapper;
 import com.khetao.serve.system.service.SysRoleService;

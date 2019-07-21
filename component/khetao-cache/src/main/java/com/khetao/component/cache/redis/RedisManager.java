@@ -26,6 +26,14 @@ public class RedisManager<T> {
     private RedisTemplate<Serializable, Serializable> redisTemplate;
 
 
+    /**
+     * set 集合添加
+     * @param key
+     * @param list
+     * @param seconds
+     * @param isIfAbsent
+     * @return
+     */
     private Long sAdd(String key, Set<T> list, long seconds, boolean isIfAbsent) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         // 不存在才插入
@@ -45,6 +53,11 @@ public class RedisManager<T> {
         });
     }
 
+    /**
+     * set 长度
+     * @param key
+     * @return
+     */
     public Long sCard(String key) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         return redisTemplate.execute((RedisCallback<Long>) connection ->
@@ -52,6 +65,12 @@ public class RedisManager<T> {
         );
     }
 
+    /**
+     * set 成员
+     * @param key
+     * @param clazz
+     * @return
+     */
     public Set<T> sMembers(String key, Class<T> clazz) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         Set<byte[]> bytes = redisTemplate.execute((RedisCallback<Set<byte[]>>) connection ->
@@ -62,6 +81,12 @@ public class RedisManager<T> {
                 .collect(Collectors.toSet());
     }
 
+    /**
+     * 判断是否在set中
+     * @param key
+     * @param value
+     * @return
+     */
     public Boolean sIsMember(String key, T value) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         byte[] bval = ProtoStuffSerializerUtils.serialize(value);
@@ -70,6 +95,12 @@ public class RedisManager<T> {
         );
     }
 
+    /**
+     * 弹出一个
+     * @param key
+     * @param clazz
+     * @return
+     */
     public T sPop(String key, Class<T> clazz) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         byte[] bytes = redisTemplate.execute((RedisCallback<byte[]>) connection ->
@@ -78,6 +109,13 @@ public class RedisManager<T> {
         return ProtoStuffSerializerUtils.deserialize(bytes, clazz);
     }
 
+    /**
+     * 弹出指定数量
+     * @param key
+     * @param count
+     * @param clazz
+     * @return
+     */
     public List<T> sPop(String key, long count, Class<T> clazz) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         List<byte[]> bytes = redisTemplate.execute((RedisCallback<List<byte[]>>) connection ->
@@ -88,6 +126,12 @@ public class RedisManager<T> {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * 删除
+     * @param key
+     * @param list
+     * @return
+     */
     public Long sRem(String key, T... list) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         byte[][] barr = (byte[][]) Arrays.asList(list).stream()
@@ -97,6 +141,15 @@ public class RedisManager<T> {
         );
     }
 
+    /**
+     * hash 设置值
+     * @param key
+     * @param field
+     * @param value
+     * @param seconds
+     * @param isIfAbsent
+     * @return
+     */
     private Boolean hSet(String key, String field, T value, long seconds, boolean isIfAbsent) {
         byte[] bkey = ProtoStuffSerializerUtils.serialize(key);
         if (isIfAbsent && isExist(bkey)) {
@@ -112,6 +165,7 @@ public class RedisManager<T> {
             return result;
         });
     }
+
 
     public Boolean hSetIfAbsent(String key, String field, T value) {
         return hSet(key, field, value, -1, true);
@@ -350,20 +404,14 @@ public class RedisManager<T> {
         } else {
             bval = ProtoStuffSerializerUtils.serialize(value);
         }
+        if (isIfAbsent && isExist(key)) {
+            return false;
+        }
         boolean result;
-        if (isIfAbsent) {
-            result = redisTemplate.execute((RedisCallback<Boolean>) connection -> {
-                boolean bool = connection.setNX(bkey, bval);
-                if (bool) {
-                    bool = connection.expire(bkey, seconds);
-                    if (!bool) {
-                        connection.del(bkey);
-                    }
-                }
-                return bool;
-            });
-        } else {
+        if (seconds > 0) {
             result = redisTemplate.execute((RedisCallback<Boolean>) connection -> connection.setEx(bkey, seconds, bval));
+        } else {
+            result = redisTemplate.execute((RedisCallback<Boolean>) connection -> connection.set(bkey, bval));
         }
         return result;
     }

@@ -1,6 +1,6 @@
 package com.khetao.serve.product.service.impl;
 
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
 import com.khetao.serve.product.entity.ProductSku;
 import com.khetao.serve.product.mapper.ProductSkuMapper;
 import com.khetao.serve.product.service.ProductSkuService;

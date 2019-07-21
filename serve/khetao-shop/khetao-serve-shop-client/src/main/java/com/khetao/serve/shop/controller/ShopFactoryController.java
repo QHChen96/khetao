@@ -17,7 +17,7 @@ import com.khetao.base.BaseController;
  * @version 1.0
  */
 @RestController
-@RequestMapping("/shop/shopFactory")
+@RequestMapping("/shopFactory")
 public class ShopFactoryController extends BaseController {
 
 }

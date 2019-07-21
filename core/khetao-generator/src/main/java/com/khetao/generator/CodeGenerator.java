@@ -140,8 +140,8 @@ public class CodeGenerator {
 
 
         strategy.setSuperEntityClass("com.khetao.base.BaseEntity");
-        strategy.setSuperServiceClass("com.khetao.base.BaseService");
-        strategy.setSuperServiceImplClass("com.khetao.base.BaseServiceImpl");
+        strategy.setSuperServiceClass("com.khetao.base.service.BaseService");
+        strategy.setSuperServiceImplClass("com.khetao.base.service.BaseServiceImpl");
         strategy.setSuperControllerClass("com.khetao.base.BaseController");
 
 

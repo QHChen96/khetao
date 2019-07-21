@@ -1,6 +1,6 @@
 package com.khetao.serve.system.service.impl;
 
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
 import com.khetao.serve.system.entity.SysResource;
 import com.khetao.serve.system.mapper.SysResourceMapper;
 import com.khetao.serve.system.service.SysResourceService;

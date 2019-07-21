@@ -1,10 +1,9 @@
 package com.khetao.serve.shop.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.khetao.base.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.khetao.base.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -58,15 +57,7 @@ public class ShopRole extends BaseEntity {
      */
     private Integer isDel;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime gmtCreate;
 
-    /**
-     * 更新时间
-     */
-    private LocalDateTime gmtModify;
 
 
 }

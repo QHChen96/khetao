@@ -1,7 +1,12 @@
 package com.khetao.serve.shop.service;
 
+import com.khetao.base.service.BaseService;
+import com.khetao.serve.shop.dto.register.RoleInfoDTO;
 import com.khetao.serve.shop.entity.ShopRole;
-import com.khetao.base.BaseService;
+import com.khetao.serve.shop.vo.ShopRoleVO;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -15,4 +20,15 @@ import com.khetao.base.BaseService;
  */
 public interface ShopRoleService extends BaseService<ShopRole> {
 
+    Set<String> loadRoleNames(Long userId);
+
+    Set<ShopRole> loadRoles(Long userId);
+
+    ShopRoleVO createRole(RoleInfoDTO roleInfo);
+
+    void allocateUsers(Long roleId, List<Long> userIds);
+
+    void unallocateRoleUsers(Long roleId);
+
+    ShopRoleVO updateRole(Long roleId, RoleInfoDTO roleInfoDTO);
 }

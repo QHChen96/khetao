@@ -1,7 +1,7 @@
 package com.khetao.serve.basic.service;
 
 import com.khetao.serve.basic.entity.Dict;
-import com.khetao.base.BaseService;
+import com.khetao.base.service.BaseService;
 
 /**
  * <p>

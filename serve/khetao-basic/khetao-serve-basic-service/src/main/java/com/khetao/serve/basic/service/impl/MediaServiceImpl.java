@@ -3,7 +3,7 @@ package com.khetao.serve.basic.service.impl;
 import com.khetao.serve.basic.entity.Media;
 import com.khetao.serve.basic.mapper.MediaMapper;
 import com.khetao.serve.basic.service.MediaService;
-import com.khetao.base.BaseServiceImpl;
+import com.khetao.base.service.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**

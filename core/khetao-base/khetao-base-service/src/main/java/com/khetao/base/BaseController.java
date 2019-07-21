@@ -29,4 +29,10 @@ public class BaseController {
         return new BaseResult(code, msg, null);
     }
 
+    public BaseResult checkResult(Object object) {
+        if (null == object) {
+            return failure();
+        }
+        return success(object);
+    }
 }

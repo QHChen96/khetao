@@ -1,7 +1,7 @@
 package com.khetao.serve.shop.service;
 
 import com.khetao.serve.shop.entity.ShopFactory;
-import com.khetao.base.BaseService;
+import com.khetao.base.service.BaseService;
 
 /**
  * <p>
