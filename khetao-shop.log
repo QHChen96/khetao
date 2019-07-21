@@ -2375,3 +2375,91 @@ sun.misc.Launcher$AppClassLoader@18b4aac2
 2019-07-22 00:49:23.270 [http-nio-50000-exec-3] DEBUG o.s.s.web.context.SecurityContextPersistenceFilter - SecurityContextHolder now cleared, as request processing completed
 2019-07-22 00:49:47.588 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
 2019-07-22 00:50:17.592 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:50:47.598 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:51:17.603 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:51:47.605 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:52:17.610 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:52:47.615 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:53:17.620 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:53:47.622 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:54:17.628 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:54:47.634 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:55:17.639 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:55:47.645 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:56:17.650 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:56:47.656 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:57:17.635 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:57:47.632 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:58:17.635 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:58:47.641 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:59:17.642 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 00:59:47.646 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:00:17.651 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:00:47.657 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:01:17.662 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:01:47.664 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:02:17.669 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:02:47.672 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:03:17.678 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:03:47.681 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:04:17.686 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:04:47.688 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:05:17.693 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:05:47.695 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:06:17.700 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2019-07-22 01:06:43.448 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2019-07-22 01:06:43.448 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 4 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - Trying to match using Ant [pattern='/logout', GET]
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Request 'POST /login' doesn't match 'GET /logout'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - Trying to match using Ant [pattern='/logout', POST]
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Checking match of request : '/login'; against '/logout'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - Trying to match using Ant [pattern='/logout', PUT]
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Request 'POST /login' doesn't match 'PUT /logout'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - Trying to match using Ant [pattern='/logout', DELETE]
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Request 'POST /login' doesn't match 'DELETE /logout'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - No matches found
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 5 of 13 in additional filter chain; firing Filter: 'CorsFilter'
+2019-07-22 01:06:43.449 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 6 of 13 in additional filter chain; firing Filter: 'JwtTokenAuthenticationProcessingFilter'
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - Trying to match using Ant [pattern='/login']
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Checking match of request : '/login'; against '/login'
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.security.web.util.matcher.OrRequestMatcher - matched
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - /login at position 7 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.s.web.util.matcher.AntPathRequestMatcher - Checking match of request : '/login'; against '/login'
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Request is to process authentication
+2019-07-22 01:06:43.450 [http-nio-50000-exec-6] DEBUG o.s.security.authentication.ProviderManager - Authentication attempt using org.springframework.security.authentication.dao.DaoAuthenticationProvider
+2019-07-22 01:06:43.452 [http-nio-50000-exec-6] DEBUG o.s.data.redis.core.RedisConnectionUtils - Opening RedisConnection
+2019-07-22 01:06:43.455 [http-nio-50000-exec-6] DEBUG io.lettuce.core.RedisChannelHandler - dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+2019-07-22 01:06:43.457 [http-nio-50000-exec-6] DEBUG io.lettuce.core.protocol.DefaultEndpoint - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+2019-07-22 01:06:43.459 [http-nio-50000-exec-6] DEBUG io.lettuce.core.protocol.DefaultEndpoint - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379, epid=0x1] write() done
+2019-07-22 01:06:43.460 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.CommandHandler - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+2019-07-22 01:06:43.462 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.CommandEncoder - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+2019-07-22 01:06:43.463 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.CommandHandler - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379, chid=0x1] Received: 5 bytes, 1 commands in the stack
+2019-07-22 01:06:43.463 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.CommandHandler - [channel=0x223e3ea1, /127.0.0.1:58693 -> localhost/127.0.0.1:6379, chid=0x1] Stack contains: 1 commands
+2019-07-22 01:06:43.464 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.RedisStateMachine - Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+2019-07-22 01:06:43.464 [lettuce-nioEventLoop-4-1] DEBUG io.lettuce.core.protocol.RedisStateMachine - Decoded AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+2019-07-22 01:06:43.464 [http-nio-50000-exec-6] DEBUG o.s.data.redis.core.RedisConnectionUtils - Closing Redis Connection
+2019-07-22 01:06:43.465 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2019-07-22 01:06:43.466 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58957234] was not registered for synchronization because synchronization is not active
+2019-07-22 01:06:43.472 [http-nio-50000-exec-6] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-07-22 01:06:43.474 [http-nio-50000-exec-6] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@867514016 wrapping com.mysql.cj.jdbc.ConnectionImpl@12772bb2] will not be managed by Spring
+2019-07-22 01:06:43.474 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopAuthMapper.selectOne - ==>  Preparing: SELECT id,status,user_id,password,salt,mobile,mobile_code,email,username,gmt_create,gmt_modify FROM td_shop_auth WHERE email = ? 
+2019-07-22 01:06:43.476 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopAuthMapper.selectOne - ==> Parameters: qhchen96@gmail.com(String)
+2019-07-22 01:06:43.480 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopAuthMapper.selectOne - <==      Total: 1
+2019-07-22 01:06:43.481 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58957234]
+2019-07-22 01:06:43.482 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+2019-07-22 01:06:43.482 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22a0bcfa] was not registered for synchronization because synchronization is not active
+2019-07-22 01:06:43.482 [http-nio-50000-exec-6] DEBUG o.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2019-07-22 01:06:43.483 [http-nio-50000-exec-6] DEBUG o.m.spring.transaction.SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1907522039 wrapping com.mysql.cj.jdbc.ConnectionImpl@12772bb2] will not be managed by Spring
+2019-07-22 01:06:43.483 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopRoleMapper.listUserRoles - ==>  Preparing: SELECT r.`id`, r.`role_name`, r.`show_name`, r.`intro`, r.`status`, r.`is_del`, r.`gmt_create`, r.`gmt_modify` FROM td_shop_role r, td_shop_user_role ur WHERE ur.user_id = ? AND r.id = ur.role_id 
+2019-07-22 01:06:43.483 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopRoleMapper.listUserRoles - ==> Parameters: 6(Long)
+2019-07-22 01:06:43.485 [http-nio-50000-exec-6] DEBUG c.k.serve.shop.mapper.ShopRoleMapper.listUserRoles - <==      Total: 2
+2019-07-22 01:06:43.486 [http-nio-50000-exec-6] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@22a0bcfa]
+2019-07-22 01:06:43.662 [http-nio-50000-exec-6] DEBUG o.s.s.w.a.s.CompositeSessionAuthenticationStrategy - Delegating to org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy@7e89eba7
+2019-07-22 01:06:43.662 [http-nio-50000-exec-6] DEBUG o.s.s.w.a.UsernamePasswordAuthenticationFilter - Authentication success. Updating SecurityContextHolder to contain: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@824ac55e: Principal: com.khetao.auth.service.KhetaoUserDetails@790b422c; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_USER, ROLE_ADMIN
+2019-07-22 01:06:43.663 [http-nio-50000-exec-6] DEBUG com.khetao.auth.util.JwtUtil - create jwt from ''
+2019-07-22 01:06:43.665 [http-nio-50000-exec-6] DEBUG com.khetao.auth.util.JwtUtil - jwt encode json【{"uid":6,"iss":"khetao","sub":"qhchen96@gmail.com","aud":"luma","jti":"8436ef9d-691e-433f-9aa5-4374d13d82a6","exp":1563736003,"nbf":1563728803,"iat":1563728803,"authorities":["ROLE_USER","ROLE_ADMIN"]}】
+2019-07-22 01:06:43.667 [http-nio-50000-exec-6] DEBUG o.s.security.web.header.writers.HstsHeaderWriter - Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@7920fed4
+2019-07-22 01:06:43.669 [http-nio-50000-exec-6] DEBUG o.s.s.web.context.SecurityContextPersistenceFilter - SecurityContextHolder now cleared, as request processing completed
+2019-07-22 01:06:47.706 [HikariPool-2 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Pool stats (total=10, active=0, idle=10, waiting=0)
