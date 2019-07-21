@@ -43,7 +43,7 @@ import java.util.List;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     public static final String ROOT_URL = "/**";
-    public static final String AUTHENTICATION_URL = "/auth/login";
+    public static final String AUTHENTICATION_URL = "/login";
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -70,7 +70,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+        AuthenticationManager manager = super.authenticationManagerBean();
+        return manager;
     }
 
     @Bean
@@ -80,13 +81,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        super.configure(web);
+       super.configure(web);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String[] permitAllEndPoints = new String[]{
-                "/login", AUTHENTICATION_URL
+                AUTHENTICATION_URL
         };
         List<String> permitAllEndPointList = Arrays.asList(permitAllEndPoints);
         http
@@ -97,29 +98,36 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
                 .formLogin()
+                .loginProcessingUrl(AUTHENTICATION_URL)
                 .successHandler(successHandler)
-                .failureHandler(failureHandler)
+                .failureHandler(failureHandler).permitAll()
             .and()
                 .authorizeRequests()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers(permitAllEndPoints).permitAll()
                 .anyRequest().authenticated()
             .and()
                 .addFilterBefore(corsFilter(), UsernamePasswordAuthenticationFilter.class)
-                .addFilterBefore(jwtFilter(permitAllEndPointList, ROOT_URL), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtFilter(permitAllEndPointList, failureHandler, ROOT_URL), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
         auth.authenticationProvider(this.jwtAuthenticationProvider);
         auth.userDetailsService(this.userDetailsService)
                 .passwordEncoder(passwordEncoder());
-
     }
 
-    protected JwtTokenAuthenticationProcessingFilter jwtFilter(List<String> pathsToSkip, String pattern) {
+    /**
+     * jwt 过滤器
+     * @param pathsToSkip
+     * @param failureHandler
+     * @param pattern
+     * @return
+     */
+    protected JwtTokenAuthenticationProcessingFilter jwtFilter(List<String> pathsToSkip, AuthenticationFailureHandler failureHandler, String pattern) {
         SkipPathRequestMatcher matcher = new SkipPathRequestMatcher(pathsToSkip, pattern);
-        JwtTokenAuthenticationProcessingFilter filter = new JwtTokenAuthenticationProcessingFilter(tokenExtractor, matcher);
+        JwtTokenAuthenticationProcessingFilter filter = new JwtTokenAuthenticationProcessingFilter(tokenExtractor, failureHandler, matcher);
         filter.setAuthenticationManager(this.authenticationManager);
         return filter;
     }

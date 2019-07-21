@@ -1,19 +1,20 @@
 package com.khetao.auth.provider;
 
+import com.khetao.auth.exception.JwtAuthenticationException;
 import com.khetao.auth.security.jwt.JwtAuthenticationToken;
 import com.khetao.auth.security.jwt.RawAccessJwtToken;
 import com.khetao.auth.util.JwtPayload;
-import com.khetao.auth.exception.JwtAuthenticationException;
 import com.khetao.auth.util.JwtUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -44,7 +45,10 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
         if (!isValid) {
             throw new JwtAuthenticationException("jwt token invalid!");
         }
-        List<GrantedAuthority> authorities = new ArrayList(payload.getAuthorities());
+        List<GrantedAuthority> authorities = payload.getAuthorities()
+                .stream()
+                .map(authority -> new SimpleGrantedAuthority(authority))
+                .collect(Collectors.toList());
         return new JwtAuthenticationToken(payload, authorities);
     }
 

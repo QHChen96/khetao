@@ -57,7 +57,12 @@ public enum ResultCode implements BaseCode {
     /**
      * 账户过期
      */
-    ACCOUNT_EXPIRED(40105, "Account expired")
+    ACCOUNT_EXPIRED(40105, "Account expired"),
+
+    /**
+     * token失效
+     */
+    TOKEN_INVALID(40106, "Token invalid")
     ;
 
     private int code;

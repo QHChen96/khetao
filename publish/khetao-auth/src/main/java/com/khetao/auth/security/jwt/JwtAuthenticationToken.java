@@ -31,7 +31,7 @@ public class JwtAuthenticationToken extends AbstractAuthenticationToken {
         super(authorities);
         this.eraseCredentials();
         this.jwtPayload = payload;
-        setAuthenticated(false);
+        super.setAuthenticated(true);
     }
 
 

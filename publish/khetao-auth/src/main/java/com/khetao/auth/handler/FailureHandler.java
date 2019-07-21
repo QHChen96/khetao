@@ -2,6 +2,7 @@ package com.khetao.auth.handler;
 
 import com.google.common.net.MediaType;
 import com.google.gson.Gson;
+import com.khetao.auth.exception.JwtAuthenticationException;
 import com.khetao.base.BaseResult;
 import com.khetao.enums.ResultCode;
 import org.springframework.http.HttpStatus;
@@ -38,6 +39,7 @@ public class FailureHandler implements AuthenticationFailureHandler {
         map.put(DisabledException.class, ResultCode.USER_DISABLED);
         map.put(CredentialsExpiredException.class, ResultCode.CREDENTIALS_EXPIRED);
         map.put(AccountExpiredException.class, ResultCode.ACCOUNT_EXPIRED);
+        map.put(JwtAuthenticationException.class, ResultCode.TOKEN_INVALID);
     }
 
     @Override
