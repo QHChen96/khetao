@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chenqinhao.luma.serve.user.mapper.SysCommonRegionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.khetao.serve.user.entity.SysCommonRegion">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="level" property="level" />
+        <result column="parent_id" property="parentId" />
+        <result column="i18n" property="i18n" />
+        <result column="parents" property="parents" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modify" property="gmtModify" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, level, parent_id, i18n, parents, gmt_create, gmt_modify
+    </sql>
+
+</mapper>

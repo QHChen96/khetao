@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cowry</artifactId>
+    <artifactId>khetao-cowry</artifactId>
     <version>${khetao.version}</version>
-    <name>cowry</name>
+    <name>khetao-cowry</name>
     <url>http://www.example.com</url>
     <description></description>
 

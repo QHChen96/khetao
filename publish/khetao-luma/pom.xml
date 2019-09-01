@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>luma</artifactId>
+    <artifactId>khetao-luma</artifactId>
     <groupId>com.khetao</groupId>
     <version>${khetao.version}</version>
-    <name>luma</name>
+    <name>khetao-luma</name>
     <url>http://www.example.com</url>
 
     <dependencies>
