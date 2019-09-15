@@ -3,7 +3,9 @@ package com.khetao.serve.shop.controller;
 
 import com.khetao.base.BaseController;
 import com.khetao.serve.shop.service.ShopService;
-import lombok.AllArgsConstructor;
+import com.khetao.storage.config.QiniuConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,9 +21,19 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/shop")
-@AllArgsConstructor
 public class ShopController extends BaseController {
 
-    private final ShopService shopService;
+    @Autowired
+    private ShopService shopService;
+
+    @Autowired
+    private QiniuConfig qiniuConfig;
+
+    @GetMapping(value = "config")
+    public String getConfig() {
+        return qiniuConfig.getReturnBody();
+    }
+
+
 
 }

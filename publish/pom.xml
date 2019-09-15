@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>khetao</artifactId>
 		<groupId>com.khetao</groupId>
-		<version>1.0-SNAPSHOT</version>
+		<version>${revision}</version>
 	</parent>
 	<groupId>com.khetao</groupId>
 	<artifactId>publish</artifactId>
@@ -17,5 +17,6 @@
 		<module>khetao-luma</module>
 		<module>khetao-gateway</module>
 		<module>khetao-auth</module>
-	</modules>
+        <module>khetao-resource</module>
+    </modules>
 </project>

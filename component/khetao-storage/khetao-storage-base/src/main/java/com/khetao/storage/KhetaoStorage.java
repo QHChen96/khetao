@@ -3,6 +3,7 @@ package com.khetao.storage;
 import com.khetao.storage.model.StorageResult;
 
 import java.io.File;
+import java.io.InputStream;
 
 /**
  * <p>
@@ -21,6 +22,8 @@ public interface KhetaoStorage {
     StorageResult upload(byte[] data, String fileName, String namespace);
 
     StorageResult upload(File file, String fileName, String namespace);
+
+    StorageResult upload(InputStream is, String fileName, String namespace);
 
     String privateDownloadUrl(String fileName);
 

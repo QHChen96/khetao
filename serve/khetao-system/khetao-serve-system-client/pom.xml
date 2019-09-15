@@ -5,12 +5,12 @@
     <parent>
         <artifactId>khetao-system</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>khetao-serve-system-client</artifactId>
-    <version>${khetao.version}</version>
+    <version>${revision}</version>
     <name>khetao-serve-system-client</name>
 
     <dependencies>

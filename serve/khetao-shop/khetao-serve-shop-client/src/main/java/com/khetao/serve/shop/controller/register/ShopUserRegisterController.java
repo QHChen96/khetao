@@ -5,7 +5,7 @@ import com.khetao.base.BaseResult;
 import com.khetao.serve.shop.dto.register.ShopUserRegisterWithEmailDTO;
 import com.khetao.serve.shop.vo.UserShopVO;
 import com.khetao.serve.shop.wrap.ShopUserWrapService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-07-20
  */
 @RestController
-@AllArgsConstructor
 public class ShopUserRegisterController extends BaseController {
 
-    private final ShopUserWrapService shopUserWrapService;
+    @Autowired
+    private ShopUserWrapService shopUserWrapService;
 
     /**
      * 注册

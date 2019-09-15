@@ -4,7 +4,7 @@ package com.khetao.serve.shop.controller;
 import com.khetao.base.BaseController;
 import com.khetao.base.BaseResult;
 import com.khetao.serve.shop.service.ShopUserService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,10 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/shopUser")
-@AllArgsConstructor
 public class ShopUserController extends BaseController {
 
-    private final ShopUserService shopUserService;
+    @Autowired
+    private ShopUserService shopUserService;
 
     @GetMapping("/list")
     public BaseResult listShopUser() {

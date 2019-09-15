@@ -2,7 +2,7 @@ package com.khetao.serve.shop.controller.login;
 
 import com.khetao.base.BaseController;
 import com.khetao.base.service.KhetaoUserService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2019-07-21
  */
 @RestController
-@AllArgsConstructor
 public class LoginController extends BaseController {
 
-    private final KhetaoUserService userService;
+    @Autowired
+    private KhetaoUserService userService;
 
 
 

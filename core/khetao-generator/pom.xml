@@ -5,7 +5,7 @@
     <parent>
         <artifactId>core</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -13,7 +13,7 @@
 
     <name>khetao-generator</name>
     <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <url>http://www.khetao.com</url>
 
     <properties>
 

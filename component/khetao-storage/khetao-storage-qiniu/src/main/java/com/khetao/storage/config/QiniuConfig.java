@@ -1,5 +1,8 @@
 package com.khetao.storage.config;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 /**
  * <p>
  *  七牛配置
@@ -10,6 +13,8 @@ package com.khetao.storage.config;
  * @email qhchen96@gmail.com
  * @since 2019-07-05
  */
+@ConfigurationProperties(prefix = "khetao.storage.qiniu")
+@Component
 public class QiniuConfig {
 
     private String accessKey;
@@ -19,6 +24,8 @@ public class QiniuConfig {
     private long tokenExpireSeconds;
 
     private String domain;
+
+    private String returnBody;
 
     public String getAccessKey() {
         return accessKey;
@@ -50,5 +57,13 @@ public class QiniuConfig {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    public String getReturnBody() {
+        return returnBody;
+    }
+
+    public void setReturnBody(String returnBody) {
+        this.returnBody = returnBody;
     }
 }

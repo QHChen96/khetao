@@ -25,9 +25,7 @@ public class QiniuStorageTest {
         config.setDomain("pu4lxyuac.bkt.clouddn.com");
         config.setSecretKey("FR79-kppiK04W-rZOi2pX-v1agjJXFHoIx2C2FHV");
         config.setTokenExpireSeconds(3600L);
-        QiniuStorage qiniuStorage = new QiniuStorage(config);
-        this.qiniuStorage = qiniuStorage;
-    }
+        this.qiniuStorage = qiniuStorage;    }
 
 
     @Test

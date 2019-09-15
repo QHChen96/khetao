@@ -12,7 +12,7 @@
     <groupId>com.khetao</groupId>
     <artifactId>khetao</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>khetao</name>
     <description>khetao project</description>
 
@@ -31,6 +31,7 @@
     </modules>
 
     <properties>
+        <revision>1.0.0</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <khetao.version>1.0.0</khetao.version>
@@ -38,7 +39,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-
         <httpclient.version>4.5.8</httpclient.version>
         <mybatis-spring.version>2.0.1</mybatis-spring.version>
         <mybatis-generator.version>1.3.7</mybatis-generator.version>
@@ -84,136 +84,143 @@
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-common</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-auth</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-storage-base</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-config</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
                 <scope>compile</scope>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-base-core</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-base-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-system</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-system-client</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-system-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-product-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-product-client</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-product</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-cache</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-shop</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-shop-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-shop-client</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-basic</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-basic-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-basic-client</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-trade</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-trade-service</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.khetao</groupId>
                 <artifactId>khetao-serve-trade-client</artifactId>
-                <version>${khetao.version}</version>
+                <version>${revision}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.khetao</groupId>
+                <artifactId>khetao-storage-qiniu</artifactId>
+                <version>${revision}</version>
             </dependency>
 
             <dependency>

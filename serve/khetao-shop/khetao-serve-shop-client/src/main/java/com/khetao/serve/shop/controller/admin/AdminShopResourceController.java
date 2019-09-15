@@ -6,7 +6,7 @@ import com.khetao.serve.shop.dto.resource.ResourceDTO;
 import com.khetao.serve.shop.entity.ShopResource;
 import com.khetao.serve.shop.service.ShopResourceService;
 import com.khetao.serve.shop.vo.ShopResourceVO;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,10 +23,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin")
-@AllArgsConstructor
 public class AdminShopResourceController extends BaseController {
 
-    private final ShopResourceService shopResourceService;
+    @Autowired
+    private ShopResourceService shopResourceService;
 
     /**
      * 资源列表

@@ -13,7 +13,7 @@ import com.khetao.serve.shop.service.ShopUserService;
 import com.khetao.serve.shop.vo.ShopUserVO;
 import com.khetao.serve.shop.vo.ShopVO;
 import com.khetao.serve.shop.vo.UserShopVO;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,18 +34,22 @@ import java.util.stream.Collectors;
  * @since 2019-07-20
  */
 @Service
-@AllArgsConstructor
 public class ShopUserWrapService implements KhetaoUserService {
 
-    private final ShopUserService shopUserService;
+    @Autowired
+    private ShopUserService shopUserService;
 
-    private final ShopService shopService;
+    @Autowired
+    private ShopService shopService;
 
-    private final ShopAuthService shopAuthService;
+    @Autowired
+    private ShopAuthService shopAuthService;
 
-    private final ShopRoleService shopRoleService;
+    @Autowired
+    private ShopRoleService shopRoleService;
 
-    private final PasswordEncoder passwordEncoder;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     /**
      * 包装视图对象

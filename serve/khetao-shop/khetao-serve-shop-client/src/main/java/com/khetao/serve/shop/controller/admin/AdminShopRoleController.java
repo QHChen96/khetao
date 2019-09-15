@@ -6,7 +6,7 @@ import com.khetao.serve.shop.dto.register.RoleInfoDTO;
 import com.khetao.serve.shop.entity.ShopRole;
 import com.khetao.serve.shop.service.ShopRoleService;
 import com.khetao.serve.shop.vo.ShopRoleVO;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,10 +23,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin")
-@AllArgsConstructor
 public class AdminShopRoleController extends BaseController {
 
-    private final ShopRoleService shopRoleService;
+    @Autowired
+    private ShopRoleService shopRoleService;
 
     /**
      * 角色列表

@@ -14,25 +14,26 @@ import java.math.BigInteger;
  */
 public class StorageResult {
 
-    private String fileName;
-    private String hash;
+    private String name;
+    private String uid;
     private String namespace;
-    private BigInteger fsize;
+    private BigInteger size;
+    private String type;
 
-    public String getFileName() {
-        return fileName;
+    public String getName() {
+        return name;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getHash() {
-        return hash;
+    public String getUid() {
+        return uid;
     }
 
-    public void setHash(String hash) {
-        this.hash = hash;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getNamespace() {
@@ -43,21 +44,19 @@ public class StorageResult {
         this.namespace = namespace;
     }
 
-    public BigInteger getFsize() {
-        return fsize;
+    public BigInteger getSize() {
+        return size;
     }
 
-    public void setFsize(BigInteger fsize) {
-        this.fsize = fsize;
+    public void setSize(BigInteger size) {
+        this.size = size;
     }
 
-    @Override
-    public String toString() {
-        return "StorageResult{" +
-                "fileName='" + fileName + '\'' +
-                ", hash='" + hash + '\'' +
-                ", namespace='" + namespace + '\'' +
-                ", fsize=" + fsize +
-                '}';
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

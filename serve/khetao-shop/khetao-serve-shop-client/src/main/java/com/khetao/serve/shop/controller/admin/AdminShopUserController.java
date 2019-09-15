@@ -7,7 +7,7 @@ import com.khetao.serve.shop.entity.ShopUser;
 import com.khetao.serve.shop.service.ShopUserService;
 import com.khetao.serve.shop.vo.ShopUserVO;
 import com.khetao.serve.shop.wrap.ShopUserWrapService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,12 +24,13 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/admin")
-@AllArgsConstructor
 public class AdminShopUserController extends BaseController {
 
-    private final ShopUserService shopUserService;
+    @Autowired
+    private ShopUserService shopUserService;
 
-    private final ShopUserWrapService shopUserWrapService;
+    @Autowired
+    private ShopUserWrapService shopUserWrapService;
     /**
      * 用户列表
      * @return

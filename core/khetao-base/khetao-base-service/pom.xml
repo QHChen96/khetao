@@ -5,12 +5,12 @@
     <parent>
         <artifactId>khetao-base</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>khetao-base-service</artifactId>
-    <version>${khetao.version}</version>
+    <version>${revision}</version>
     <name>khetao-base-service</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.khetao.com</url>

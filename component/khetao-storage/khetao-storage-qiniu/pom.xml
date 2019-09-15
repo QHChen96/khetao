@@ -5,12 +5,12 @@
     <parent>
         <artifactId>khetao-storage</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>khetao-storage-qiniu</artifactId>
-    <version>${khetao.version}</version>
+    <version>${revision}</version>
     <name>khetao-storage-qiniu</name>
     <url>http://www.khetao.com</url>
 
@@ -24,6 +24,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.khetao</groupId>
+            <artifactId>khetao-config</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.qiniu</groupId>
             <artifactId>qiniu-java-sdk</artifactId>
         </dependency>
@@ -33,11 +38,15 @@
             <artifactId>slf4j-api</artifactId>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
         </dependency>
 
     </dependencies>

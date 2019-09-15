@@ -5,12 +5,12 @@
     <parent>
         <artifactId>core</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>khetao-common</artifactId>
-    <version>${khetao.version}</version>
+    <version>${revision}</version>
     <name>khetao-common</name>
     <url>http://www.khetao.com</url>
 

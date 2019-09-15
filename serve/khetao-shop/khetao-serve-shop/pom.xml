@@ -5,13 +5,13 @@
     <parent>
         <artifactId>khetao-shop</artifactId>
         <groupId>com.khetao</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>khetao-serve-shop</artifactId>
 
-    <version>${khetao.version}</version>
+    <version>${revision}</version>
 
     <name>khetao-serve-shop</name>
     <url>http://www.khetao.com</url>
