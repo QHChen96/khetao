@@ -1,9 +1,13 @@
 package com.khetao.serve.shop.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.khetao.base.service.BaseServiceImpl;
 import com.khetao.enums.DelStatusEnum;
 import com.khetao.enums.UsableStatusEnum;
 import com.khetao.serve.shop.dto.register.ShopUserRegisterWithEmailDTO;
+import com.khetao.serve.shop.dto.shop.ShopBasicDTO;
+import com.khetao.serve.shop.dto.shop.ShopWebInfoDTO;
 import com.khetao.serve.shop.entity.Shop;
 import com.khetao.serve.shop.mapper.ShopMapper;
 import com.khetao.serve.shop.service.ShopService;
@@ -14,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -55,6 +60,32 @@ public class ShopServiceImpl extends BaseServiceImpl<ShopMapper, Shop> implement
         initShop(shop);
         baseMapper.insert(shop);
         return wrapShopVO(shop);
+    }
+
+    @Override
+    public List<Shop> queryUserShops(Long userId) {
+        return baseMapper.selectList(new QueryWrapper<Shop>().lambda().eq(Shop::getUserId, userId));
+    }
+
+    @Override
+    public Long saveBasic(ShopBasicDTO shopBasicDTO) {
+        Shop shop = new Shop();
+        BeanUtils.copyProperties(shopBasicDTO, shop);
+        baseMapper.update(shop, new UpdateWrapper<Shop>()
+                .lambda()
+                .eq(Shop::getId, shopBasicDTO.getId())
+                .eq(Shop::getUserId, shopBasicDTO.getUserId()));
+        return shop.getId();
+    }
+
+    @Override
+    public void saveWebInfo(ShopWebInfoDTO shopWebInfoDTO) {
+        Shop shop = new Shop();
+        BeanUtils.copyProperties(shopWebInfoDTO, shop);
+        baseMapper.update(shop, new UpdateWrapper<Shop>()
+                .lambda()
+                .eq(Shop::getId, shopWebInfoDTO.getId())
+                .eq(Shop::getUserId, shopWebInfoDTO.getUserId()));
     }
 
     private void initShop(Shop shop) {

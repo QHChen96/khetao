@@ -91,6 +91,14 @@ public class ShopUserServiceImpl extends BaseServiceImpl<ShopUserMapper, ShopUse
         baseMapper.unallocateUserRoles(userId);
     }
 
+    @Override
+    public void updateAvatar(Long userId, String avatar) {
+        ShopUser shopUser = new ShopUser();
+        shopUser.setAvatar(avatar);
+        shopUser.setId(userId);
+        baseMapper.updateById(shopUser);
+    }
+
 
     private void initShopUser(ShopUser shopUser) {
         shopUser.setGmtCreate(LocalDateTime.now());

@@ -39,4 +39,21 @@ public class Shop extends BaseEntity {
     private Integer status;
 
     private Long userId;
+
+    private String avatar;
+
+    private String email;
+
+    private String address;
+
+    private String servicePhone;
+
+    private String serviceTime;
+
+    private String contacts;
+
+    private String title;
+    private String keyword;
+    private String website;
+    private String description;
 }

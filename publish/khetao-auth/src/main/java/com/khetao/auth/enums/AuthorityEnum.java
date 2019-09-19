@@ -10,7 +10,7 @@ package com.khetao.auth.enums;
  * @email qhchen96@gmail.com
  * @since 2019-07-20
  */
-public enum  AuthorityEnum {
+public enum AuthorityEnum {
 
     /**
      * 普通用户

@@ -1,13 +1,14 @@
 package com.khetao.serve.shop.controller;
 
 
+import com.khetao.auth.annotation.CurrentUser;
 import com.khetao.base.BaseController;
+import com.khetao.base.BaseResult;
+import com.khetao.serve.shop.dto.shop.ShopBasicDTO;
+import com.khetao.serve.shop.dto.shop.ShopWebInfoDTO;
 import com.khetao.serve.shop.service.ShopService;
-import com.khetao.storage.config.QiniuConfig;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -26,14 +27,24 @@ public class ShopController extends BaseController {
     @Autowired
     private ShopService shopService;
 
-    @Autowired
-    private QiniuConfig qiniuConfig;
 
-    @GetMapping(value = "config")
-    public String getConfig() {
-        return qiniuConfig.getReturnBody();
+    @GetMapping(value = "list")
+    public BaseResult getConfig(@CurrentUser Long userId) {
+        return success(shopService.queryUserShops(userId));
     }
 
+    @PostMapping(value = "/basic/save")
+    public BaseResult basicSave(@CurrentUser Long userId, @RequestBody ShopBasicDTO shopBasicDTO) {
+        shopBasicDTO.setUserId(userId);
+        Long shopId = shopService.saveBasic(shopBasicDTO);
+        return success(shopId);
+    }
 
+    @PostMapping(value = "/web-info/save")
+    public BaseResult webInfoSave(@CurrentUser Long userId, @RequestBody ShopWebInfoDTO shopWebInfoDTO) {
+        shopWebInfoDTO.setUserId(userId);
+        shopService.saveWebInfo(shopWebInfoDTO);
+        return success();
+    }
 
 }

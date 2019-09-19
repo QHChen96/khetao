@@ -32,6 +32,11 @@ public class ShopUser extends BaseEntity {
     private Long id;
 
     /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
      * 用户名
      */
     private String username;

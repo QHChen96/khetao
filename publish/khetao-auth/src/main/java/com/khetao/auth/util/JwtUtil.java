@@ -119,14 +119,24 @@ public class JwtUtil {
     }
 
     /**
+     * 获取用户id
+     * @param token
+     * @return
+     */
+    public Long getUserId(String token) {
+        JwtPayload payload = decode(token);
+        return payload.getUid();
+    }
+
+    /**
      * 检查
      * @param payload
      * @return
      */
     public boolean validate(JwtPayload payload) {
         try {
-            // 减去10秒, 消除网络抖动
-            long now = LocalDateTime.now().toEpochSecond(ZoneOffset.ofHours(8)) - 10L;
+            // 10秒, 消除网络抖动
+            long now = LocalDateTime.now().toEpochSecond(ZoneOffset.ofHours(8)) + 10;
             if (null == payload) {
                 throw new BaseServiceException("token validate illegality!");
             }

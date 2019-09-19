@@ -1,6 +1,9 @@
 package com.khetao.serve.shop.wrap;
 
+import com.khetao.auth.util.JwtPayload;
+import com.khetao.auth.util.JwtUtil;
 import com.khetao.base.service.KhetaoUserService;
+import com.khetao.component.cache.redis.RedisManager;
 import com.khetao.dto.KhetaoUser;
 import com.khetao.serve.shop.dto.register.ShopUserRegisterWithEmailDTO;
 import com.khetao.serve.shop.dto.user.ShopUserDTO;
@@ -50,6 +53,12 @@ public class ShopUserWrapService implements KhetaoUserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private RedisManager redisManager;
+
+    @Autowired
+    private JwtUtil jwtUtil;
 
     /**
      * 包装视图对象
@@ -125,6 +134,21 @@ public class ShopUserWrapService implements KhetaoUserService {
             khetaoUser.setAuthorities(Collections.EMPTY_SET);
         }
         return khetaoUser;
+    }
+
+    @Override
+    public boolean checkBlackList(String token) {
+        String key = String.format("khetao:black:%s", token);
+        return redisManager.isExist(key);
+    }
+
+    @Override
+    public void blockToken(String token) {
+        JwtPayload payload = jwtUtil.decode(token);
+        if (null != payload) {
+            String key = String.format("khetao:black:%s", token);
+            redisManager.put(key, "block", payload.getExp());
+        }
     }
 
 

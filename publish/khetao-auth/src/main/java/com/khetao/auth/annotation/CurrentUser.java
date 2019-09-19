@@ -7,6 +7,6 @@ import java.lang.annotation.*;
 @Documented
 public @interface CurrentUser {
 
-
+    String value() default "khetao-user";
 
 }

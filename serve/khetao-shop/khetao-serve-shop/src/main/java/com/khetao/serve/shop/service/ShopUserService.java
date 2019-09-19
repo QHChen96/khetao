@@ -28,4 +28,5 @@ public interface ShopUserService extends BaseService<ShopUser> {
 
     void unallocateUserRoles(Long userId);
 
+    void updateAvatar(Long userId, String avatar);
 }

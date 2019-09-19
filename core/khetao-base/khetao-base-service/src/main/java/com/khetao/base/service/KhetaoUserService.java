@@ -21,6 +21,14 @@ public interface KhetaoUserService {
      */
     KhetaoUser loadUser(String account);
 
+    /**
+     * 检查黑名单
+     * @param token
+     * @return
+     */
+    boolean checkBlackList(String token);
 
+
+    void blockToken(String token);
 
 }

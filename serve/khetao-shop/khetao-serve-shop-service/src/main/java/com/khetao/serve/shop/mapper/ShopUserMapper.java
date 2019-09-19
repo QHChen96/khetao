@@ -42,4 +42,6 @@ public interface ShopUserMapper extends BaseMapper<ShopUser> {
      * 解绑角色
      */
     void unallocateRole(@Param("userId") Long userId, @Param("roleId") Long roleId);
+
+
 }
