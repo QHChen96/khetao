@@ -3,7 +3,7 @@ package com.khetao.serve.shop.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.khetao.base.service.BaseServiceImpl;
 import com.khetao.component.cache.redis.RedisManager;
-import com.khetao.enums.UsableStatusEnum;
+import com.khetao.base.enums.UsableStatusEnum;
 import com.khetao.serve.shop.dto.register.EmailRegisterDTO;
 import com.khetao.serve.shop.dto.user.ShopUserDTO;
 import com.khetao.serve.shop.entity.ShopAuth;

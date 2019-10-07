@@ -25,12 +25,12 @@ public class QiniuStorageTest {
         config.setDomain("pu4lxyuac.bkt.clouddn.com");
         config.setSecretKey("FR79-kppiK04W-rZOi2pX-v1agjJXFHoIx2C2FHV");
         config.setTokenExpireSeconds(3600L);
-        this.qiniuStorage = qiniuStorage;    }
+        this.qiniuStorage = qiniuStorage;
+    }
 
 
     @Test
     public void testUpload() {
-        System.out.println(qiniuStorage.upload("/Users/chenqinhao/Pictures/WechatIMG1965.jpeg", "luma/cube.jpeg", "luma"));
     }
 
     @Test

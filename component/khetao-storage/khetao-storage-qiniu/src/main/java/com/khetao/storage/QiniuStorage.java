@@ -11,7 +11,6 @@ import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
 import com.qiniu.util.StringMap;
-import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,23 +40,22 @@ public class QiniuStorage implements KhetaoStorage {
     private QiniuConfig config;
 
 
-    private StorageResult upload0(UploadType type, Object object, String fileName, String namespace) {
-        logger.info("开始上传文件: 名称【{}】, 空间 【{}】", fileName, namespace);
+    private StorageResult upload0(UploadType type, Object object, String fileName, String mediaType) {
+        logger.info("开始上传文件: 名称【{}】, 空间 【{}】", fileName, config.getNamespace());
         Configuration cfg = new Configuration(Region.regionAs0());
         UploadManager uploadManager = new UploadManager(cfg);
         //默认不指定key的情况下，以文件内容的hash值作为文件名
         Auth auth = Auth.create(config.getAccessKey(), config.getSecretKey());
         StringMap putPolicy = new StringMap();
         putPolicy.put("returnBody", config.getReturnBody());
-        String upToken = auth.uploadToken(namespace, fileName, config.getTokenExpireSeconds(), putPolicy);
+        String upToken = auth.uploadToken(config.getNamespace(), fileName, config.getTokenExpireSeconds(), putPolicy);
         try {
             Response response = null;
             switch (type) {
                 case FILE_PATH:
                     response = uploadManager.put((String) object, fileName, upToken); break;
                 case INPUT_STREAM:
-                    String mime = "image/" + FilenameUtils.getExtension(fileName);
-                    response = uploadManager.put((InputStream) object, fileName, upToken, null, mime);
+                    response = uploadManager.put((InputStream) object, fileName, upToken, null, mediaType);
                     break;
                 case FILE:
                     response = uploadManager.put((File) object, fileName, upToken); break;
@@ -80,41 +78,38 @@ public class QiniuStorage implements KhetaoStorage {
      * 上传文件
      * @param filePath 文件路径
      * @param fileName
-     * @param namespace
      * @return
      */
     @Override
-    public StorageResult upload(String filePath, String fileName, String namespace) {
-        return upload0(UploadType.FILE_PATH, filePath, fileName, namespace);
+    public StorageResult upload(String filePath, String fileName) {
+        return upload0(UploadType.FILE_PATH, filePath, fileName, null);
     }
 
     /**
      * 上传文件
      * @param data 数组
      * @param fileName
-     * @param namespace
      * @return
      */
     @Override
-    public StorageResult upload(byte[] data, String fileName, String namespace) {
-        return upload0(UploadType.FILE_PATH, data, fileName, namespace);
+    public StorageResult upload(byte[] data, String fileName) {
+        return upload0(UploadType.FILE_PATH, data, fileName, null);
     }
 
     /**
      * 上传文件
      * @param file 文件
      * @param fileName
-     * @param namespace
      * @return
      */
     @Override
-    public StorageResult upload(File file, String fileName, String namespace) {
-        return upload0(UploadType.FILE, file, fileName, namespace);
+    public StorageResult upload(File file, String fileName) {
+        return upload0(UploadType.FILE, file, fileName, null);
     }
 
     @Override
-    public StorageResult upload(InputStream is, String fileName, String namespace) {
-        return upload0(UploadType.INPUT_STREAM, is, fileName, namespace);
+    public StorageResult upload(InputStream is, String fileName, String mediaType) {
+        return upload0(UploadType.INPUT_STREAM, is, fileName, mediaType);
     }
 
 

@@ -27,6 +27,8 @@ public class QiniuConfig {
 
     private String returnBody;
 
+    private String namespace;
+
     public String getAccessKey() {
         return accessKey;
     }
@@ -65,5 +67,13 @@ public class QiniuConfig {
 
     public void setReturnBody(String returnBody) {
         this.returnBody = returnBody;
+    }
+
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
     }
 }

@@ -1,9 +1,9 @@
 package com.khetao.serve.shop.service.impl;
 
 import com.khetao.base.service.BaseServiceImpl;
-import com.khetao.enums.DelStatusEnum;
-import com.khetao.enums.UsableStatusEnum;
-import com.khetao.exception.NotFoundException;
+import com.khetao.base.enums.DelStatusEnum;
+import com.khetao.base.enums.UsableStatusEnum;
+import com.khetao.base.exception.NotFoundException;
 import com.khetao.serve.shop.dto.register.RoleInfoDTO;
 import com.khetao.serve.shop.entity.ShopRole;
 import com.khetao.serve.shop.mapper.ShopRoleMapper;

@@ -2,7 +2,7 @@ package com.khetao.serve.basic.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.khetao.base.BaseEntity;
+import com.khetao.base.entity.BaseEntity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package com.khetao.auth.provider;
 
 import com.khetao.base.service.KhetaoUserService;
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

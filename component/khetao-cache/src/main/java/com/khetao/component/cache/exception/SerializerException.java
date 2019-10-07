@@ -1,7 +1,7 @@
 package com.khetao.component.cache.exception;
 
-import com.khetao.base.BaseServiceException;
-import com.khetao.enums.ResultCode;
+import com.khetao.base.exception.BaseServiceException;
+import com.khetao.base.enums.ResultCode;
 
 /**
  * <p>

@@ -1,7 +1,5 @@
 package com.khetao.storage.model;
 
-import java.math.BigInteger;
-
 /**
  * <p>
  *
@@ -17,8 +15,11 @@ public class StorageResult {
     private String name;
     private String uid;
     private String namespace;
-    private BigInteger size;
+    private Long size;
     private String type;
+    private String orginName;
+    private String hash;
+    private String url;
 
     public String getName() {
         return name;
@@ -44,11 +45,11 @@ public class StorageResult {
         this.namespace = namespace;
     }
 
-    public BigInteger getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(BigInteger size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
@@ -58,5 +59,29 @@ public class StorageResult {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getOrginName() {
+        return orginName;
+    }
+
+    public void setOrginName(String orginName) {
+        this.orginName = orginName;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

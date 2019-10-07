@@ -1,7 +1,7 @@
 package com.khetao.auth.resolver;
 
 import com.google.common.net.HttpHeaders;
-import com.khetao.auth.annotation.CurrentUser;
+import com.khetao.auth.annotation.CurrentUserId;
 import com.khetao.auth.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -30,7 +30,7 @@ public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentR
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        if (parameter.getParameterType().isAssignableFrom(Long.class) && parameter.hasParameterAnnotation(CurrentUser.class)) {
+        if (parameter.getParameterType().isAssignableFrom(Long.class) && parameter.hasParameterAnnotation(CurrentUserId.class)) {
             return true;
         }
         return false;
@@ -38,8 +38,8 @@ public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentR
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-        CurrentUser currentUser = parameter.getParameterAnnotation(CurrentUser.class);
-        Object object = webRequest.getAttribute(currentUser.value(), NativeWebRequest.SCOPE_REQUEST);
+        CurrentUserId currentUserId = parameter.getParameterAnnotation(CurrentUserId.class);
+        Object object = webRequest.getAttribute(currentUserId.value(), NativeWebRequest.SCOPE_REQUEST);
         if (null == object) {
             String authorization = webRequest.getHeader(HttpHeaders.AUTHORIZATION);
             if (!StringUtils.isEmpty(authorization)) {

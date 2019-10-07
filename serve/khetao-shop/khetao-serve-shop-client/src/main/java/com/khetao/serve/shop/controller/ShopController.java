@@ -1,7 +1,7 @@
 package com.khetao.serve.shop.controller;
 
 
-import com.khetao.auth.annotation.CurrentUser;
+import com.khetao.auth.annotation.CurrentUserId;
 import com.khetao.base.BaseController;
 import com.khetao.base.BaseResult;
 import com.khetao.serve.shop.dto.shop.ShopBasicDTO;
@@ -29,19 +29,19 @@ public class ShopController extends BaseController {
 
 
     @GetMapping(value = "list")
-    public BaseResult getConfig(@CurrentUser Long userId) {
+    public BaseResult getConfig(@CurrentUserId Long userId) {
         return success(shopService.queryUserShops(userId));
     }
 
     @PostMapping(value = "/basic/save")
-    public BaseResult basicSave(@CurrentUser Long userId, @RequestBody ShopBasicDTO shopBasicDTO) {
+    public BaseResult basicSave(@CurrentUserId Long userId, @RequestBody ShopBasicDTO shopBasicDTO) {
         shopBasicDTO.setUserId(userId);
         Long shopId = shopService.saveBasic(shopBasicDTO);
         return success(shopId);
     }
 
     @PostMapping(value = "/web-info/save")
-    public BaseResult webInfoSave(@CurrentUser Long userId, @RequestBody ShopWebInfoDTO shopWebInfoDTO) {
+    public BaseResult webInfoSave(@CurrentUserId Long userId, @RequestBody ShopWebInfoDTO shopWebInfoDTO) {
         shopWebInfoDTO.setUserId(userId);
         shopService.saveWebInfo(shopWebInfoDTO);
         return success();

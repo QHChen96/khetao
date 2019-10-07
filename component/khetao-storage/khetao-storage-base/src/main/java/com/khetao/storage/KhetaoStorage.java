@@ -17,13 +17,13 @@ import java.io.InputStream;
  */
 public interface KhetaoStorage {
 
-    StorageResult upload(String filePath, String fileName, String namespace);
+    StorageResult upload(String filePath, String fileName);
 
-    StorageResult upload(byte[] data, String fileName, String namespace);
+    StorageResult upload(byte[] data, String fileName);
 
-    StorageResult upload(File file, String fileName, String namespace);
+    StorageResult upload(File file, String fileName);
 
-    StorageResult upload(InputStream is, String fileName, String namespace);
+    StorageResult upload(InputStream is, String fileName, String type);
 
     String privateDownloadUrl(String fileName);
 

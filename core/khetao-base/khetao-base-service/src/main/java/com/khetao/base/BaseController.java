@@ -1,6 +1,6 @@
 package com.khetao.base;
 
-import com.khetao.enums.ResultCode;
+import com.khetao.base.enums.ResultCode;
 
 /**
  * @author chenqinhao qhchen96@gmail.com

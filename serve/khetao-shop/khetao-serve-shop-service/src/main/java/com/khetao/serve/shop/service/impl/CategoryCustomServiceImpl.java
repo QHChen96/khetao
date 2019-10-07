@@ -1,9 +1,9 @@
 package com.khetao.serve.shop.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.khetao.base.BaseServiceException;
+import com.khetao.base.exception.BaseServiceException;
 import com.khetao.base.service.BaseServiceImpl;
-import com.khetao.exception.NotFoundException;
+import com.khetao.base.exception.NotFoundException;
 import com.khetao.serve.shop.dto.product.CategoryCustomDTO;
 import com.khetao.serve.shop.entity.CategoryCustom;
 import com.khetao.serve.shop.mapper.CategoryCustomMapper;

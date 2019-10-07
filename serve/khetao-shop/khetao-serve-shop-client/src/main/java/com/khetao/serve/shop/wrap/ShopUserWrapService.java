@@ -4,7 +4,7 @@ import com.khetao.auth.util.JwtPayload;
 import com.khetao.auth.util.JwtUtil;
 import com.khetao.base.service.KhetaoUserService;
 import com.khetao.component.cache.redis.RedisManager;
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 import com.khetao.serve.shop.dto.register.ShopUserRegisterWithEmailDTO;
 import com.khetao.serve.shop.dto.user.ShopUserDTO;
 import com.khetao.serve.shop.entity.ShopAuth;

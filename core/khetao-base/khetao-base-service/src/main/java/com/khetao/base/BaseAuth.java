@@ -1,5 +1,6 @@
 package com.khetao.base;
 
+import com.khetao.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

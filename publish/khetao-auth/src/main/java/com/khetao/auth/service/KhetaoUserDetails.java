@@ -1,6 +1,6 @@
 package com.khetao.auth.service;
 
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

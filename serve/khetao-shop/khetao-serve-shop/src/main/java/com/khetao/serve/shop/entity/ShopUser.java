@@ -3,7 +3,7 @@ package com.khetao.serve.shop.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.khetao.base.BaseEntity;
+import com.khetao.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -63,7 +63,7 @@ public class ShopUser extends BaseEntity {
 
     /**
      * 状态
-     * @see com.khetao.enums.UsableStatusEnum
+     * @see com.khetao.base.enums.UsableStatusEnum
      */
     private Integer status;
 
@@ -79,7 +79,7 @@ public class ShopUser extends BaseEntity {
 
     /**
      * 是否删除
-     * @see com.khetao.enums.DelStatusEnum
+     * @see com.khetao.base.enums.DelStatusEnum
      */
     private Integer isDel;
 

@@ -1,6 +1,6 @@
 package com.khetao.base.service;
 
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 
 /**
  * <p>

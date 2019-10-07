@@ -1,7 +1,7 @@
 package com.khetao.auth.service;
 
 import com.khetao.base.service.KhetaoUserService;
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.core.userdetails.UserDetails;

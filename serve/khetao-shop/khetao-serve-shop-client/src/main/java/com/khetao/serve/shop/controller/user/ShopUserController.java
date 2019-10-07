@@ -1,15 +1,17 @@
 package com.khetao.serve.shop.controller.user;
 
 
-import com.alibaba.nacos.common.util.Md5Utils;
-import com.khetao.auth.annotation.CurrentUser;
+import cn.hutool.core.io.FileTypeUtil;
+import com.khetao.auth.annotation.CurrentUserId;
 import com.khetao.base.BaseController;
 import com.khetao.base.BaseResult;
+import com.khetao.serve.shop.consts.UploaderTypeEnum;
 import com.khetao.serve.shop.entity.ShopUser;
 import com.khetao.serve.shop.service.ShopUserService;
+import com.khetao.serve.shop.wrap.MediaWrapService;
 import com.khetao.storage.KhetaoStorage;
 import com.khetao.storage.model.StorageResult;
-import org.apache.commons.io.FilenameUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -28,6 +30,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping("/shop-user")
+@Slf4j
 public class ShopUserController extends BaseController {
 
     @Autowired
@@ -36,28 +39,26 @@ public class ShopUserController extends BaseController {
     @Autowired
     private KhetaoStorage khetaoStorage;
 
+    @Autowired
+    private MediaWrapService mediaWrapService;
+
     @GetMapping("/list")
     public BaseResult listShopUser() {
         return success(shopUserService.list(null));
     }
 
+
     @GetMapping("/current")
-    public BaseResult getCurrent(@CurrentUser Long currentUserId) {
+    public BaseResult getCurrent(@CurrentUserId Long currentUserId) {
         ShopUser shopUser = shopUserService.getById(currentUserId);
         return success(shopUser);
     }
 
     @PostMapping(path = "/upload/avatar")
-    public BaseResult upload(@CurrentUser Long currentUserId, @RequestParam("file") MultipartFile multipartFile) throws IOException {
-        String md5 = Md5Utils.getMD5("/avatar/" + multipartFile.getOriginalFilename(), "utf8");
-        String name = String.format("%s.%s", md5, FilenameUtils.getExtension(multipartFile.getOriginalFilename()));
-        StorageResult result = khetaoStorage.upload(multipartFile.getInputStream(), name, "khetao-com");
-        String url = khetaoStorage.downloadUrl(result.getName());
-        shopUserService.updateAvatar(currentUserId, url);
-        return success(url);
+    public BaseResult upload(@CurrentUserId Long currentUserId, @RequestParam("file") MultipartFile multipartFile) throws IOException {
+        log.info(FileTypeUtil.getType(multipartFile.getInputStream()));
+        StorageResult result = mediaWrapService.updateAvatar(multipartFile, currentUserId, UploaderTypeEnum.ADMIN);
+        return success(result.getName());
     }
-
-
-
 
 }

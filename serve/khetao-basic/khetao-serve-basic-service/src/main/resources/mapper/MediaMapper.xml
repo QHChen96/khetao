@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.khetao.serve.basic.mapper.MediaMapper">
+<mapper namespace="com.khetao.serve.shop.mapper.MediaMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.khetao.serve.basic.entity.Media">
+    <resultMap id="BaseResultMap" type="com.khetao.serve.shop.entity.Media">
         <id column="id" property="id" />
         <result column="uploader_type" property="uploaderType" />
         <result column="uploader_id" property="uploaderId" />

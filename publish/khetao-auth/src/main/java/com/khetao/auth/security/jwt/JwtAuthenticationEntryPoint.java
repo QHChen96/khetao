@@ -3,7 +3,7 @@ package com.khetao.auth.security.jwt;
 import com.google.common.net.MediaType;
 import com.google.gson.Gson;
 import com.khetao.base.BaseResult;
-import com.khetao.enums.ResultCode;
+import com.khetao.base.enums.ResultCode;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;

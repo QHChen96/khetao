@@ -2,9 +2,9 @@ package com.khetao.auth.util;
 
 import com.google.gson.Gson;
 import com.khetao.auth.security.jwt.JwtSettings;
-import com.khetao.base.BaseServiceException;
+import com.khetao.base.exception.BaseServiceException;
 import com.khetao.common.util.DateTimeUtil;
-import com.khetao.dto.KhetaoUser;
+import com.khetao.base.dto.KhetaoUser;
 import com.nimbusds.jose.*;
 import com.nimbusds.jose.crypto.MACSigner;
 import com.nimbusds.jose.crypto.MACVerifier;
